@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class Calc {
 
+    private ArrayList<Item> items;
+
     Calc() {
 
         items = new ArrayList<Item>();
@@ -39,8 +41,5 @@ public class Calc {
         return ((personsAmount > 0) ? sum / personsAmount : 0);
 
     }
-
-    private ArrayList<Item> items;
-
 
 }

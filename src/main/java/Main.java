@@ -31,6 +31,10 @@ public class Main {
 
             System.out.println("Введите цену для товара " + itemName);
             double itemPrice = input.nextDouble(scanner);
+            while (! isCorrectPrice(itemPrice)) {
+                System.out.println("Введенная цена должна быть больше нуля");
+                itemPrice = input.nextDouble(scanner);
+            }
 
             Item item = new Item(itemName, itemPrice);
             calc.addItem(item);
@@ -63,6 +67,9 @@ public class Main {
         return command.equalsIgnoreCase(finishAddComand());
     }
 
+    static boolean isCorrectPrice(double price) {
+        return price > 0;
+    }
     static String finishAddComand() {
         return "завершить";
     }
